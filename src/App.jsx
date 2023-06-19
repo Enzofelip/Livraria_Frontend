@@ -32,7 +32,6 @@ function App() {
 
     try{
     
-
       const data = {
         title,
         name,
