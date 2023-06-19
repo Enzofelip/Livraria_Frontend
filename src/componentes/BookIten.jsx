@@ -15,7 +15,6 @@ const BookIten = ({book, removBook, completeTodo}) => {
     return(
         <div className='todo' style={{textDecoration: book.isCompleted ? "line-through" : ''}}>
         <div className='content'>
-            <img src={`${axios.defaults.baseURL}${book.src}`} alt={book.title}/>
             <h2>{book.title}</h2>
             <p>Autor: <span>{book.name}</span></p>
             {estado &&(

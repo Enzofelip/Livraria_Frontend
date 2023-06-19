@@ -23,27 +23,24 @@ function App() {
 
 
 
-  const addList = async(title, name, description, select, image) => {
+  const addList = async(title, name, description, select) => {
 
-    if(!title || !name || !description || !select || !image){
+    if(!title || !name || !description || !select){
       return
     }
 
 
     try{
-      const formData = new FormData();
-      formData.append("image", image);
-      formData.append("title", title);
-      formData.append("name", name);
-      formData.append("description",description)
-      formData.append("select", select)
+    
 
-
-      const {data : newBooks} = await axios.post(`/books`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-      },
-      })
+      const data = {
+        title,
+        name,
+        description,
+        select
+      }
+  
+      const {data : newBooks} = await axios.post(`/books`,data)
   
       setBooks([...books, newBooks])
     }catch(error){

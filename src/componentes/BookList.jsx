@@ -6,13 +6,12 @@ const BookList = ({addList}) => {
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [select, setSelect] = useState("")
-    const [image, setImage] = useState(null)
 
     const handleSubmit = async(e) =>{
         e.preventDefault()
 
-        console.log(image)
-        addList(title,name,description, select, image)
+        // console.log(image)
+        addList(title,name,description, select)
         setTitle("");
         setName("");
         setDescription("");
@@ -45,10 +44,6 @@ const BookList = ({addList}) => {
                         <option value="Estudos">Estudos</option>
                         <option></option>
                     </select>
-                </div>
-
-                <div className="form-cnontrol">
-                    <input type="file" name="image" onChange={(e) => setImage(e.target.files[0])}/>
                 </div>
 
                 <button type="submit">Enviar</button>
