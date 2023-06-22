@@ -27,7 +27,7 @@ const BookList = ({addList}) => {
                 </div>
 
                 <div className="form-cnontrol">
-                    <label>Nome: </label>
+                    <label>Autor: </label>
                     <input type="text" name="name" placeholder="Digite seu nome" onChange={(e) => setName(e.target.value)} value={name}/>
                 </div>
 
